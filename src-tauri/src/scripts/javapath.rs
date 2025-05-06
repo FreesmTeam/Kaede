@@ -1,8 +1,8 @@
 use java_runtimes::detector;
 
 fn getJavaPath() {
-    let runtimes = detector::detect_java_in_environments();
-    return runtimes
+    let javaRuntimes = detector::detect_java_in_environments();
+    return javaRuntimes
 }
 
 fn chooseJavaPath(pos: usize) {
