@@ -1,6 +1,6 @@
 use std::process::Command;
 use buildargs::{buildArgs};
-use javapath::{getJavaPath};
+use javapath::{chooseJavaPath, getJavaPath};
 
 fn LaunchGame() {
     let mut pos: usize;
