@@ -3,9 +3,10 @@ use buildargs::{buildArgs};
 use javapath::{getJavaPath};
 
 fn LaunchGame() {
-    let userNickname = String::new()
-    let gameArgs = String::new()
-    let javaPath = String::from(getJavaPath());
+    let mut pos: usize;
+    let userNickname = String::new();
+    let gameArgs = String::new();
+    let javaPath = String::new(chooseJavaPath(pos));
     let buildedArgs = String::from(buildArgs(userNickname, gameArgs));
 
     Command::new(javaPath)

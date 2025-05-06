@@ -1,4 +1,4 @@
 
 fn buildArgs(userNickname: &str, gameArgs: &str) {
-    //? как-нибудь сделаю
+    //? так и не понял как, делайте сами
 }
