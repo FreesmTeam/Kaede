@@ -9,6 +9,7 @@ fn LaunchGame() {
     let javaPath = String::new(chooseJavaPath(pos));
     let buildedArgs = String::from(buildArgs(userNickname, gameArgs));
 
+    
     Command::new(javaPath)
     .arg(buildedArgs)
     .status()
