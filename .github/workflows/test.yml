@@ -34,13 +34,18 @@ jobs:
         if: matrix.platform == 'ubuntu-latest'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-6.0-dev libappindicator3-dev librsvg2-dev patchelf
+          curl -fsSL https://bun.sh/install | bash
 
-      - run: npm install
+      - name: Install bun (windows only)
+        if: matrix.platform == 'windows-latest'
+        run: powershell -c "irm bun.sh/install.ps1 | iex"
 
-      - run: npm run build:web
+      - run: bun install
 
-      - run: npm run lint
+      - run: bun run build:web
+
+      - run: bun run lint
         if: matrix.platform == 'ubuntu-latest'
 
       - name: Build
